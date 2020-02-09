@@ -13,14 +13,18 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_48"
+            android:layout_height="@dimen/size_65"
             android:title="@string/flickr"
+            android:padding="@dimen/size_5"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
             app:navigationIcon="@drawable/back" />
 
         <ImageView
             android:id="@+id/photoView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_400"
+            android:layout_height="@dimen/size_300"
+            android:scaleType="fitXY"
             android:contentDescription="@string/flickr" />
 
         <androidx.appcompat.widget.AppCompatTextView
