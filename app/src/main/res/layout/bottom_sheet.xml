@@ -31,7 +31,7 @@
         android:padding="@dimen/size_10"
         android:drawablePadding="@dimen/size_10"
         android:drawableStart="@android:drawable/ic_menu_day"
-        android:text="@string/date_taken"
+        android:text="@string/date_taken_detail"
         android:textSize="@dimen/sp_18"
          />
 
