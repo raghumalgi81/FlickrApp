@@ -23,7 +23,6 @@ This application implements the following concepts :
 * [MockWebServer][mockwebserver] for testing HTTP clients
 
 ## PREVIEW
-<img src="/loading.png" width="300px"</img> 
 ![Initial Loading](/loading.png?raw=true "Optional Title")
 ![Photo List](/photo_list.png?raw=true "Optional Title")
 ![Sort by date](/order_by.png?raw=true "Optional Title")
