@@ -3,18 +3,8 @@ This is an Flickr gallery app  using Architecture Components (ViewModel, LiveDat
 
 ## PRESENTATION
 This simple app consists of  two screens
-1.PhotoList(Fetch (Retrofit) the flickr public photos)
-2.PhotoDetail(Show the detailed info when clicked on a photo from PhotoList)
-
-## PREVIEW
-![Initial Loading](/loading.png?raw=true "Optional Title")
-![Photo List](/photo_list.png?raw=true "Optional Title")
-![Sort by date](/order_by.png?raw=true "Optional Title")
-![Search via tag](/search_tag.png?raw=true "Optional Title")
-![Enter tag by text](/search_edittext.png?raw=true "Optional Title")
-![Search results](/search_results.png?raw=true "Optional Title")
-![Photo Detail](/photo_detail.png?raw=true "Optional Title")
-
+* PhotoList(Fetch (Retrofit) the flickr public photos)
+* PhotoDetail(Show the detailed info when clicked on a photo from PhotoList)
 
 ### Architecture Components
 This application implements the following concepts :
@@ -31,4 +21,14 @@ This application implements the following concepts :
 * [Retrofit][retrofit] for REST api communication
 * [Glide][glide] for image loading
 * [MockWebServer][mockwebserver] for testing HTTP clients
+
+## PREVIEW
+![Initial Loading](/loading.png?raw=true "Optional Title")
+![Photo List](/photo_list.png?raw=true "Optional Title")
+![Sort by date](/order_by.png?raw=true "Optional Title")
+![Search via tag](/search_tag.png?raw=true "Optional Title")
+![Enter tag by text](/search_edittext.png?raw=true "Optional Title")
+![Search results](/search_results.png?raw=true "Optional Title")
+![Photo Detail](/photo_detail.png?raw=true "Optional Title")
+
 
