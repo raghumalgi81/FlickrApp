@@ -9,11 +9,12 @@ This simple app consists of  two screens
 ## PREVIEW
 ![Initial Loading](/loading.png?raw=true "Optional Title")
 ![Photo List](/photo_list.png?raw=true "Optional Title")
-![Photo Detail](/photo_detail.png?raw=true "Optional Title")
 ![Sort by date](/order_by.png?raw=true "Optional Title")
 ![Search via tag](/search_tag.png?raw=true "Optional Title")
 ![Enter tag by text](/search_edittext.png?raw=true "Optional Title")
 ![Search results](/search_results.png?raw=true "Optional Title")
+![Photo Detail](/photo_detail.png?raw=true "Optional Title")
+
 
 ### Architecture Components
 This application implements the following concepts :
