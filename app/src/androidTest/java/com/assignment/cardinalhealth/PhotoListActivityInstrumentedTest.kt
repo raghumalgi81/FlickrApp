@@ -1,7 +1,6 @@
 package com.assignment.cardinalhealth
 
 import androidx.lifecycle.MutableLiveData
-import androidx.test.runner.AndroidJUnit4
 import com.assignment.cardinalhealth.model.Feed
 import org.junit.Rule
 import org.junit.Test
@@ -10,11 +9,12 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
 import com.assignment.cardinalhealth.model.Media
 import com.assignment.cardinalhealth.ui.main.photos.PhotoListActivity
 
-@RunWith(AndroidJUnit4::class)
+@RunWith(AndroidJUnit4ClassRunner::class)
 class PhotoListActivityInstrumentedTest {
 
     @Rule
@@ -24,11 +24,11 @@ class PhotoListActivityInstrumentedTest {
 
 
     @Test
-    fun givenPlantListFragment_whenContentVisibilityVisible_thenContentIsShown() {
+    fun givenPhotosListFragment_whenContentVisibilityVisible_thenContentIsShown() {
         /* Given */
         feedListLiveData.postValue(fakeFeedList)
         /* Then */
-        onView(withId(R.id.photosRecyclerView)).check(matches(isDisplayed()))
+        onView(withId(R.id.photosRecyclerView)).check(matches((isDisplayed())))
         onView(withId(R.id.progress)).check(matches((isDisplayed())))
     }
 

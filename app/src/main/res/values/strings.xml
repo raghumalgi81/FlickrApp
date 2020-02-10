@@ -17,7 +17,6 @@
     <string name="published">Published:%1$s</string>
     <string name="date_taken">Date Taken:%1$s</string>
     <string name="tags_detail">Tags:</string>
-    <string name="title_detail">Title:</string>
     <string name="published_detail">Published date:</string>
     <string name="date_taken_detail">Date taken:</string>
     <string name="date_taken_bottom_sheet">Date taken</string>

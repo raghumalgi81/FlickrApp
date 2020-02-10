@@ -20,8 +20,6 @@ data class Feed(
     var link: String = EMPTY_STRING,
     @SerializedName("tags")
     var tags: String = EMPTY_STRING,
-    @SerializedName("description")
-    var desc: String = EMPTY_STRING,
     @SerializedName("author")
     var author: String = EMPTY_STRING,
     @SerializedName("author_id")

@@ -12,21 +12,17 @@ import com.miguelcatalan.materialsearchview.MaterialSearchView
 import kotlinx.android.synthetic.main.photo_list.*
 import com.assignment.cardinalhealth.ui.main.detail.PhotoDetailActivity
 import com.assignment.cardinalhealth.util.BottomSheetDialog
-import com.assignment.cardinalhealth.util.ShowErrorDialog
 import com.assignment.cardinalhealth.util.SortByDate
 
 
 class PhotoListActivity : BaseActivity(), BottomSheetDialog.BottomSheetListener {
-
-
-    override fun getLayoutById(): Int =
-        R.layout.photo_list
-
     // FOR DATA
     private lateinit var viewModel: PhotosViewModel
     private lateinit var recyclerAdapter: PhotosRecyclerAdapter
     private var feeds: List<Feed> = emptyList()
 
+    override fun getLayoutById(): Int =
+        R.layout.photo_list
 
     override fun configureDesign() {
         setSupportActionBar(toolbar)
@@ -102,7 +98,6 @@ class PhotoListActivity : BaseActivity(), BottomSheetDialog.BottomSheetListener 
         }
     }
 
-
     private fun loadList(feeds: List<Feed>) {
         if (feeds.isNotEmpty()) {
             noItemsText.visibility = View.GONE
@@ -111,16 +106,5 @@ class PhotoListActivity : BaseActivity(), BottomSheetDialog.BottomSheetListener 
             noItemsText.visibility = View.VISIBLE
         }
     }
-
-    private fun showNetworkDialog() {
-        val alertDialog =
-            ShowErrorDialog.newInstance(
-                getString(R.string.network), getString(
-                    R.string.message
-                )
-            )
-        alertDialog.show(supportFragmentManager, getString(R.string.fragment_tag))
-    }
-
 
 }

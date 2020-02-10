@@ -2,7 +2,9 @@ package com.assignment.cardinalhealth.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.assignment.cardinalhealth.R
 import com.assignment.cardinalhealth.di.ViewModelFactory
+import com.assignment.cardinalhealth.util.ShowErrorDialog
 import javax.inject.Inject
 
 abstract class BaseActivity: AppCompatActivity() {
@@ -24,4 +26,14 @@ abstract class BaseActivity: AppCompatActivity() {
     // --- ABSTRACT METHODS ---
     abstract fun getLayoutById(): Int
     abstract fun configureDesign()
+
+    protected fun showNetworkDialog() {
+        val alertDialog =
+            ShowErrorDialog.newInstance(
+                getString(R.string.network), getString(
+                    R.string.message
+                )
+            )
+        alertDialog.show(supportFragmentManager, getString(R.string.fragment_tag))
+    }
 }
