@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_20"
             android:fontFamily="@font/roboto_slab_regular"
-            android:textSize="@dimen/sp_18" />
+            android:textSize="@dimen/sp_16" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_20"
             android:fontFamily="@font/roboto_slab_regular"
-            android:textSize="@dimen/sp_18" />
+            android:textSize="@dimen/sp_16" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_20"
             android:fontFamily="@font/roboto_slab_regular"
-            android:textSize="@dimen/sp_18" />
+            android:textSize="@dimen/sp_16" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
@@ -90,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_20"
-            android:textSize="@dimen/sp_18" />
+            android:textSize="@dimen/sp_16" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_20"
             android:fontFamily="@font/roboto_slab_regular"
-            android:textSize="@dimen/sp_18" />
+            android:textSize="@dimen/sp_16" />
 
 
     </LinearLayout>
