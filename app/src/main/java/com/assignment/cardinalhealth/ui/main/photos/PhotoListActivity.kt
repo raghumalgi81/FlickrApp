@@ -9,7 +9,7 @@ import com.assignment.cardinalhealth.R
 import com.assignment.cardinalhealth.base.BaseActivity
 import com.assignment.cardinalhealth.model.Feed
 import com.miguelcatalan.materialsearchview.MaterialSearchView
-import kotlinx.android.synthetic.main.main_activity.*
+import kotlinx.android.synthetic.main.photo_list.*
 import com.assignment.cardinalhealth.ui.main.detail.PhotoDetailActivity
 import com.assignment.cardinalhealth.util.BottomSheetDialog
 import com.assignment.cardinalhealth.util.ShowErrorDialog
@@ -20,7 +20,7 @@ class PhotoListActivity : BaseActivity(), BottomSheetDialog.BottomSheetListener 
 
 
     override fun getLayoutById(): Int =
-        R.layout.main_activity
+        R.layout.photo_list
 
     // FOR DATA
     private lateinit var viewModel: PhotosViewModel

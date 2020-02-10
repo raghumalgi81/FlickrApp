@@ -14,6 +14,7 @@ import com.assignment.cardinalhealth.R
 import com.assignment.cardinalhealth.model.Feed
 import com.assignment.cardinalhealth.util.ImageLoader
 import com.assignment.cardinalhealth.util.Utility
+import kotlinx.android.synthetic.main.photo_row.view.*
 
 
 class PhotosRecyclerAdapter(
@@ -39,29 +40,25 @@ class PhotosRecyclerAdapter(
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-        holder.bind(getItem(position),context, imageClickCallBack)
+        holder.bind(getItem(position), context, imageClickCallBack)
 }
 
-class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val titleText = view.findViewById<TextView>(R.id.title)
-    val image = view.findViewById<ImageView>(R.id.image)
-    val tagsText = view.findViewById<TextView>(R.id.tags)
-    val publishedText = view.findViewById<TextView>(R.id.published)
-    val dateTakenText = view.findViewById<TextView>(R.id.datetaken)
-
-    fun bind(feed: Feed,context: Context, imageClickBack: (Feed) -> Unit) {
-        with(feed){
-            titleText.text = context.getString(R.string.title,title)
-            tagsText.text = context.getString(R.string.tags,tags)
-            publishedText.text =context.getString(R.string.published,Utility.getFormattedDate(published))
-            dateTakenText.text = context.getString(R.string.date_taken,Utility.getFormattedDate(dateTaken))
-            ImageLoader.loadMediumImage(image, media.imageUrl)
+class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    fun bind(feed: Feed, context: Context, imageClickBack: (Feed) -> Unit) =
+        with(itemView) {
+            title.text = context.getString(R.string.title, feed.title)
+            tags.text = context.getString(R.string.tags, feed.tags)
+            published.text =
+                context.getString(R.string.published, Utility.getFormattedDate(feed.published))
+            datetaken.text =
+                context.getString(R.string.date_taken, Utility.getFormattedDate(feed.dateTaken))
+            ImageLoader.loadMediumImage(image, feed.media.imageUrl)
             image.setOnClickListener {
                 imageClickBack(feed)
             }
-        }
 
-    }
+
+        }
 }
 
 object PhotosDiff : DiffUtil.ItemCallback<Feed>() {

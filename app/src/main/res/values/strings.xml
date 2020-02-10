@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Flickr</string>
     <string name="search">Search</string>
-    <string name="flickr_photo">flickr_photo</string>
+    <string name="flickr_photo_list">Photo List</string>
     <string name="flickr">Flickr</string>
     <string name="search_str">Public Photos</string>
     <string name="sort_by">SORT BY</string>
