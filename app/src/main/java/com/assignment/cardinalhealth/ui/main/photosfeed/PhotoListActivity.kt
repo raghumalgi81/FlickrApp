@@ -85,6 +85,8 @@ class PhotoListActivity : BaseActivity(), BottomSheetDialog.BottomSheetListener 
             }
         })
         viewModel.errorMessage.observe(this, Observer {
+            photosRecyclerView.hide()
+            noItemsText.show()
             showNetworkDialog()
         })
     }
