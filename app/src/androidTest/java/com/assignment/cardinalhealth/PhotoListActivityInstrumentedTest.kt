@@ -12,7 +12,8 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
 import com.assignment.cardinalhealth.model.Media
-import com.assignment.cardinalhealth.ui.main.photos.PhotoListActivity
+import com.assignment.cardinalhealth.ui.main.photosfeed.PhotoListActivity
+import org.hamcrest.CoreMatchers.not
 
 @RunWith(AndroidJUnit4ClassRunner::class)
 class PhotoListActivityInstrumentedTest {
@@ -23,12 +24,15 @@ class PhotoListActivityInstrumentedTest {
     private val feedListLiveData = MutableLiveData<List<Feed>>()
 
 
+
+
+
     @Test
     fun givenPhotosListFragment_whenContentVisibilityVisible_thenContentIsShown() {
         /* Given */
         feedListLiveData.postValue(fakeFeedList)
         /* Then */
-        onView(withId(R.id.photosRecyclerView)).check(matches((isDisplayed())))
+        onView(withId(R.id.photosRecyclerView)).check(matches(not(isDisplayed())))
         onView(withId(R.id.progress)).check(matches((isDisplayed())))
     }
 

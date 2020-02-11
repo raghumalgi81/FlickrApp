@@ -3,8 +3,14 @@ This is an Flickr gallery app  using Architecture Components (ViewModel, LiveDat
 
 ## PRESENTATION
 This simple app consists of  two screens
-* PhotoList(Fetch (Retrofit) the flickr public photos)
-* PhotoDetail(Show the detailed info when clicked on a photo from PhotoList)
+* PhotosFeed(Fetch (Retrofit) the flickr public photos)
+* PhotoDetail(Show the detailed info when clicked on a photo from PhotosFeed)
+
+
+## UI Testing and unit testing
+*I have used roboelectric for UI testing as well as for view model tests.
+*Unit tests involves dagger injection.Please make sure that DaggerTestComponent is 
+created(Building the project will generate dagger components).
 
 ### Architecture Components
 This application implements the following concepts :

@@ -1,4 +1,4 @@
-package com.assignment.cardinalhealth.ui.main.photos
+package com.assignment.cardinalhealth.ui.main.photosfeed
 
 import android.view.Menu
 import androidx.core.content.ContextCompat
@@ -12,11 +12,12 @@ import com.assignment.cardinalhealth.base.BaseActivity
 import com.assignment.cardinalhealth.model.Feed
 import com.miguelcatalan.materialsearchview.MaterialSearchView
 import kotlinx.android.synthetic.main.photo_list.*
-import com.assignment.cardinalhealth.ui.main.detail.PhotoDetailActivity
+import com.assignment.cardinalhealth.ui.main.photodetail.PhotoDetailActivity
 import com.assignment.cardinalhealth.util.BottomSheetDialog
 import com.assignment.cardinalhealth.util.SortByDate
 import com.assignment.cardinalhealth.util.hide
 import com.assignment.cardinalhealth.util.show
+import org.jetbrains.annotations.TestOnly
 
 
 class PhotoListActivity : BaseActivity(), BottomSheetDialog.BottomSheetListener {
@@ -25,8 +26,8 @@ class PhotoListActivity : BaseActivity(), BottomSheetDialog.BottomSheetListener 
     private lateinit var recyclerAdapter: PhotosRecyclerAdapter
     private var feeds: List<Feed> = emptyList()
 
-    override fun getLayoutById(): Int =
-        R.layout.photo_list
+
+    override fun getLayoutById(): Int = R.layout.photo_list
 
     override fun configureDesign() {
         setSupportActionBar(toolbar)
@@ -43,7 +44,6 @@ class PhotoListActivity : BaseActivity(), BottomSheetDialog.BottomSheetListener 
             isFocusable = false
             adapter = recyclerAdapter
         }
-        addDividers(photosRecyclerView)
         configureViewModel()
         observeData()
     }
@@ -105,37 +105,29 @@ class PhotoListActivity : BaseActivity(), BottomSheetDialog.BottomSheetListener 
 
     private fun loadList(feeds: List<Feed>) {
         if (feeds.isNotEmpty()) {
+            photosRecyclerView.show()
             noItemsText.hide()
-            recyclerAdapter.submitData(feeds)
+            recyclerAdapter.feedList = feeds
         } else {
+            photosRecyclerView.hide()
             noItemsText.show()
         }
     }
-
-    private fun addDividers(photosView: RecyclerView) {
-        val verticalDividerItemDecoration = DividerItemDecoration(
-            this, DividerItemDecoration.VERTICAL
-        ).apply {
-            setDrawable(
-                ContextCompat.getDrawable(
-                    this@PhotoListActivity,
-                    R.drawable.vertical_divider
-                )!!
-            )
-        }
-        photosView.addItemDecoration(verticalDividerItemDecoration)
-
-        val horizontalDividerItemDecoration = DividerItemDecoration(
-            this, DividerItemDecoration.HORIZONTAL
-        ).apply {
-            setDrawable(
-                ContextCompat.getDrawable(
-                    this@PhotoListActivity,
-                    R.drawable.horizontal_divider
-                )!!
-            )
-        }
-        photosView.addItemDecoration(horizontalDividerItemDecoration)
+    /**
+     * Required for activity tests using robo electric
+     */
+    @TestOnly
+    fun setTestViewModel(testViewModel: PhotosViewModel) {
+        viewModel = testViewModel
     }
+
+    /**
+     * Required for activity tests using robo electric
+     */
+    @TestOnly
+    fun subscribeToFeed() {
+        observeData()
+    }
+
 
 }

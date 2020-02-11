@@ -1,4 +1,4 @@
-package com.assignment.cardinalhealth.ui.main.detail
+package com.assignment.cardinalhealth.ui.main.photodetail
 
 import android.content.Context
 import android.content.Intent

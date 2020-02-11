@@ -6,7 +6,7 @@ import android.os.Build
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
-import com.assignment.cardinalhealth.ui.main.photos.PhotosViewModel
+import com.assignment.cardinalhealth.ui.main.photosfeed.PhotosViewModel
 import com.assignment.cardinalhealth.util.TestData
 import org.junit.Before
 import org.junit.Test

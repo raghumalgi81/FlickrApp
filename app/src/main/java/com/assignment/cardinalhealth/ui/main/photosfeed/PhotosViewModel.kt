@@ -1,4 +1,4 @@
-package com.assignment.cardinalhealth.ui.main.photos
+package com.assignment.cardinalhealth.ui.main.photosfeed
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

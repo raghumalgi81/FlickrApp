@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import com.assignment.cardinalhealth.ui.main.photos.PhotosViewModel
+import com.assignment.cardinalhealth.ui.main.photosfeed.PhotosViewModel
 
 @Module
 abstract class ViewModelModule {

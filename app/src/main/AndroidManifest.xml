@@ -15,8 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:fullBackupContent="false">
-        <activity android:name=".ui.main.detail.PhotoDetailActivity" />
-        <activity android:name=".ui.main.photos.PhotoListActivity"
+        <activity android:name=".ui.main.photodetail.PhotoDetailActivity" />
+        <activity android:name=".ui.main.photosfeed.PhotoListActivity"
            android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
