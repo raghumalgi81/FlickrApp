@@ -11,8 +11,8 @@ import kotlin.test.AfterTest
 
 abstract class BaseTest {
 
-    lateinit var testAppComponent: TestAppComponent
-    lateinit var mockServer: MockWebServer
+    private lateinit var testAppComponent: TestAppComponent
+    private lateinit var mockServer: MockWebServer
     @Inject lateinit var viewModelFactory: ViewModelFactory
 
     @Before

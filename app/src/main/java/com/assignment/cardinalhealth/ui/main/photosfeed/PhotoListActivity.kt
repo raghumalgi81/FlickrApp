@@ -1,12 +1,9 @@
 package com.assignment.cardinalhealth.ui.main.photosfeed
 
 import android.view.Menu
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.assignment.cardinalhealth.R
 import com.assignment.cardinalhealth.base.BaseActivity
 import com.assignment.cardinalhealth.model.Feed
@@ -32,12 +29,9 @@ class PhotoListActivity : BaseActivity(), BottomSheetDialog.BottomSheetListener 
     override fun configureDesign() {
         setSupportActionBar(toolbar)
         //Set up recycler view
-        recyclerAdapter =
-            PhotosRecyclerAdapter(
-                this
-            ) {
+        recyclerAdapter = PhotosRecyclerAdapter(this) {
                 startActivity(PhotoDetailActivity.newIntent(this, it.feed))
-            }
+        }
         photosRecyclerView.apply {
             layoutManager = GridLayoutManager(this@PhotoListActivity, 2)
             isNestedScrollingEnabled = false

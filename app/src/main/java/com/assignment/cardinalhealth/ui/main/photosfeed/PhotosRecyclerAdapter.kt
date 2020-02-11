@@ -13,16 +13,12 @@ import com.assignment.cardinalhealth.model.PhotosAdapterEvent
 import com.assignment.cardinalhealth.util.ImageLoader
 import com.assignment.cardinalhealth.util.DateUtil
 import kotlinx.android.synthetic.main.photo_row.view.*
-import org.jetbrains.annotations.TestOnly
 
 
 class PhotosRecyclerAdapter(
     private val context: Context,
     private val listener: (PhotosAdapterEvent) -> Unit
-) :
-    ListAdapter<Feed, ViewHolder>(
-        PhotosDiff
-    ) {
+) : ListAdapter<Feed, ViewHolder>(PhotosDiff) {
 
     var feedList: List<Feed> = emptyList()
         set(value) {
@@ -31,10 +27,7 @@ class PhotosRecyclerAdapter(
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
-        ViewHolder(
-            LayoutInflater.from(
-                context
-            ).inflate(R.layout.photo_row, parent, false)
+        ViewHolder(LayoutInflater.from(context).inflate(R.layout.photo_row, parent, false)
         )
 
 

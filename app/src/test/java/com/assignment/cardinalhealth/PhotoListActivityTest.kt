@@ -129,6 +129,6 @@ class PhotoListActivityTest {
         }
         val shadowActivity: ShadowActivity = Shadows.shadowOf(PhotoDetailActivity())
         val intent = shadowActivity.nextStartedActivity
-        assertEquals(intent.component, ComponentName(activity, PhotoDetailActivity::class.java));
+        assertEquals(intent.component, ComponentName(activity, PhotoDetailActivity::class.java))
     }
 }

@@ -32,10 +32,7 @@ class PhotoDetailActivity : BaseActivity() {
     companion object {
         private const val FEED_PARAM = "feed"
 
-        fun newIntent(
-            context: Context,
-            feed: Feed
-        ): Intent =
+        fun newIntent(context: Context, feed: Feed): Intent =
             Intent(context, PhotoDetailActivity::class.java).apply {
                 putExtra(FEED_PARAM, feed)
             }

@@ -9,7 +9,7 @@ This simple app consists of  two screens
 
 ## UI Testing and unit testing
 *I have used roboelectric for UI testing as well as for view model tests.
-*Unit tests involves dagger injection.Please make sure that DaggerTestComponent is 
+*Unit tests involves dagger injection using test components.Please make sure that DaggerTestComponent is 
 created(Building the project will generate dagger components).
 
 ### Architecture Components
