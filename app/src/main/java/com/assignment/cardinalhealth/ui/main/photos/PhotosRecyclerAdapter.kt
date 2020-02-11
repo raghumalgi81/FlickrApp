@@ -9,14 +9,15 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.assignment.cardinalhealth.R
 import com.assignment.cardinalhealth.model.Feed
+import com.assignment.cardinalhealth.model.PhotosAdapterEvent
 import com.assignment.cardinalhealth.util.ImageLoader
-import com.assignment.cardinalhealth.util.Utility
+import com.assignment.cardinalhealth.util.DateUtil
 import kotlinx.android.synthetic.main.photo_row.view.*
 
 
 class PhotosRecyclerAdapter(
     private val context: Context,
-    private val imageClickCallBack: (Feed) -> Unit
+    private val listener: (PhotosAdapterEvent) -> Unit
 ) :
     ListAdapter<Feed, ViewHolder>(
         PhotosDiff
@@ -37,21 +38,21 @@ class PhotosRecyclerAdapter(
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-        holder.bind(getItem(position), context, imageClickCallBack)
+        holder.bind(getItem(position), context, listener)
 }
 
 class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    fun bind(feed: Feed, context: Context, imageClickBack: (Feed) -> Unit) =
+    fun bind(feed: Feed, context: Context, listener: (PhotosAdapterEvent) -> Unit) =
         with(itemView) {
             title.text = context.getString(R.string.title, feed.title)
             tags.text = context.getString(R.string.tags, feed.tags)
             published.text =
-                context.getString(R.string.published, Utility.getFormattedDate(feed.published))
+                context.getString(R.string.published, DateUtil.getFormattedDate(feed.published))
             datetaken.text =
-                context.getString(R.string.date_taken, Utility.getFormattedDate(feed.dateTaken))
+                context.getString(R.string.date_taken, DateUtil.getFormattedDate(feed.dateTaken))
             ImageLoader.loadMediumImage(image, feed.media.imageUrl)
             image.setOnClickListener {
-                imageClickBack(feed)
+                listener(PhotosAdapterEvent.ClickEvent(feed))
             }
 
 

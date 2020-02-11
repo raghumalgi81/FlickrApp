@@ -38,7 +38,7 @@ class PhotosViewModel @Inject constructor(
     }
 
     /**
-     * Fetch public public feed using API
+     * Fetch public feed using flickr API
      */
     fun getFlickrFeed(tag: String = EMPTY_STRING): Boolean {
         this.disposable.addAll(this.flickrRepository.getFeed(tag)
